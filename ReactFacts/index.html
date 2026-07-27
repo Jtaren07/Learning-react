@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "react": "https://esm.sh/react@latest?dev",
+                "react-dom/client": "https://esm.sh/react-dom@latest/client?dev",
+                "react/jsx-runtime": "https://esm.sh/react@latest/jsx-runtime?dev"
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/@babel/standalone@latest/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel" data-type="module" data-presets="react">
+        import React from 'react';
+        import {createRoot} from 'react-dom/client';
+
+        const app = document.getElementById('app');
+        const root = createRoot(app);
+
+
+        function Navbar() {
+            return (
+                <nav>
+                    <img src="react-icon2.png" className="nav--icon"/>
+                    <h3 className="nav--logo_text">ReactFacts</h3>
+                    <h4 className="nav--title">React Course - Project 1</h4>
+                </nav>
+            )
+        }
+
+        function Main() {
+            return (
+                <main>
+                    <h1 className="main--title">Fun facts about React</h1>
+                    <ul className="main--facts">
+                        <li>Was first released in 2013</li>
+                        <li>Was originally created by Jordan Walke</li>
+                        <li>Has well over 100k stars on GitHub</li>
+                        <li>Is maintained by Facebook</li>
+                        <li>Powers thousands of enterprise apps, including mobile apps</li>
+                    </ul>
+                </main>
+            )
+        }
+
+         /* function DateTime() {
+            const date = new Date()
+
+            return (
+                <h1>It's is currently about {date.getHours() % 12} O'Clock!</h1>
+            )
+        } */
+
+        function Page() {
+            return (
+                <div>
+                    <Navbar />
+                    <Main />
+                    
+                </div>
+            )
+        }
+
+        root.render(<Page/>)
+    </script>
+    
+</body>
+</html>
