@@ -28,7 +28,20 @@
         const app = document.getElementById('app');
         const root = createRoot(app);
 
-        
+        function Header() {
+            return (
+                <header>
+                    <nav className="nav">
+                        <img src="./react-icon.jpg" className="nav-logo"/>
+                        <ul className="nav-items">
+                            <li>Pricing</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </nav>
+                </header>
+            )
+        }        
 
         function MainContent() {
             return (
